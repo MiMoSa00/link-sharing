@@ -2,12 +2,17 @@
 
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
-import { FaUser, FaLink } from 'react-icons/fa';
-import { GoPlus } from 'react-icons/go';
 import Image from 'next/image';
 import IMAGE from 'next/image';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { app } from '../firebase/Config'
+
+// imported icons
+import { FaUser, FaLink } from 'react-icons/fa';
+import {HiOutlineMenuAlt4 } from 'react-icons/hi';
+import { GoPlus } from 'react-icons/go';
+import { PiGithubLogoFill } from 'react-icons/pi';
+
 
 // Define types
 type Website = 'github' | 'gitlab' | 'bitbucket';
@@ -45,10 +50,15 @@ const LinkForm: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
   if (!isVisible) return null;
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-200 p-4 rounded-md mt-4">
-      <label htmlFor="link" className="block text-gray-700 font-bold mb-2">
-        Link One
+    <form onSubmit={handleSubmit} className="bg-gray-100 p-4 rounded-md mt-4">
+      <div className='flex justify-between'>
+      <label htmlFor="link" className="flex items-center text-gray-700 font-bold mb-2">
+        <HiOutlineMenuAlt4  className='font-light mr-1'/> Link #1
       </label>
+      <button>Remove</button>
+      </div>
+     
+      <p className='mb-2'>Platform</p>
       <input
         type="url"
         id="link"
@@ -65,16 +75,11 @@ const LinkForm: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
         required
       >
         <option value="">Select a website</option>
-        <option value="github">GitHub</option>
-        <option value="gitlab">GitLab</option>
-        <option value="bitbucket">Bitbucket</option>
+        <PiGithubLogoFill /> <option value="github"> GitHub </option>
+        <option value="gitlab">Youtube</option>
+        <option value="bitbucket">LinkedIn</option>
       </select>
-      <button
-        type="submit"
-        className="w-full bg-purple-500 text-white p-2 rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
-      >
-        Submit
-      </button>
+      
     </form>
   );
 };

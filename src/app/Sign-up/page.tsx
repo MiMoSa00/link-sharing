@@ -53,13 +53,14 @@ const SignUp = () => {
   
   return (
     <div className="min-h-screen grid items-center justify-center bg-white ">
-        <div className="flex flex-row items-center justify-center mt-12 -mb-8">
-        <Image src="/logo.png" alt="Logo" width={50} height={50} className="w-8 h-8 mt-4 mr-2 " />
-        <h1 className="text-2xl font-bold mt-4 text-center">devlinks</h1>
-      </div>
-      
-      <div className="bg-white p-9 px-12 rounded-lg shadow-lg w-full max-w-lg">
-        <h2 className="text-2xl font-bold mb-2 text-left">Create account</h2>
+         <div className="w-full max-w-lg">
+    <div className="flex flex-col items-center justify-center mb-8 sm:mb-12">
+      <Image src="/logo.png" alt="Logo" width={50} height={50} className="w-12 h-12 sm:w-16 sm:h-16" />
+      <h1 className="text-2xl sm:text-3xl font-bold mt-2 text-center">devlinks</h1>
+    </div>
+    
+    <div className="bg-white p-6 sm:p-9 rounded-lg shadow-lg w-full">
+      <h2 className="text-xl sm:text-2xl font-bold mb-2 text-left">Create account</h2>
         <p className="text-sm font-light mb-10 text-left mt-2  text-customGray">Let’s get you started sharing your links!</p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -136,6 +137,7 @@ const SignUp = () => {
           </span>
         </form>
       </div>
+    </div>
     </div>
   );
 };
