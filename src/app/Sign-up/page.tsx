@@ -53,14 +53,16 @@ const SignUp = () => {
   
   return (
     <div className="min-h-screen grid items-center justify-center bg-white ">
-         <div className="w-full max-w-lg">
-    <div className="flex flex-col items-center justify-center mb-8 sm:mb-12">
-      <Image src="/logo.png" alt="Logo" width={50} height={50} className="w-12 h-12 sm:w-16 sm:h-16" />
-      <h1 className="text-2xl sm:text-3xl font-bold mt-2 text-center">devlinks</h1>
+         <div className="sm:mt-10 sm:mr-7">
+         <div className="flex flex-col items-center justify-center mb-6 sm:mb-8">
+      <div className="flex items-left space-x-2 sm:mt-4 sm:space-x-3">
+        <Image src="/logo.png" alt="Logo" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10" />
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">devlinks</h1>
+      </div>
     </div>
     
     <div className="bg-white p-6 sm:p-9 rounded-lg shadow-lg w-full">
-      <h2 className="text-xl sm:text-2xl font-bold mb-2 text-left">Create account</h2>
+      <h2 className="text-xl sm:text-2xl font-bold mb-2 text-left -ml-4">Create account</h2>
         <p className="text-sm font-light mb-10 text-left mt-2  text-customGray">Let’s get you started sharing your links!</p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
